@@ -1,207 +1,508 @@
+/* Reset CSS */
 :root{
-    --color-primary:#0073ff;
+    --color-primary:#53e2d6;
     --color-white: #e9e9e9;
     --color-black: #141d28;
     --color-black-1:#212b38;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
 }
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
+/* Testimonial section styles */
+
+.testimonials{
+    padding: 40px 0;
+    background: #f1f1f1;
+    color: #434343;
+    text-align: center;
 }
 
-.nav {
-    background-color: var(--color-black);
-    height: 80px;
+.inner{
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.border{
+    width: 160px;
+    height: 5px;
+    background: #53e2d6;
+    margin: 26px auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col{
+    flex: 33.33%;
+    max-width: 33.33%;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.testimonial{
+    background: #fff;
+    padding: 30px;
+}
+
+.testimonial img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name{
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.stars{
+    color: #53e2d6;
+    margin-bottom: 20px;
+}
+.stars .half::before {
+  content: "\f089";
+  width: 50%;
+  overflow: hidden;
+}
+
+@media screen and (max-width:680px){
+    .col{
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Style for back-to-top button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #40b8e7;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #back-to-top:hover {
+    background-color: #40b8e7;
+  }
+  
+  /* Style for WhatsApp icon */
+  .whatsapp-icon {
+    position: fixed;
+    bottom:70px;
+    right: 27px;
+    font-size: 30px;
+    color: #25d366; /* WhatsApp green */
+    cursor: pointer;
+  }
+
+  /* Gallery heading styles */
+  .gallery-heading {
+    padding: 40px 0;
+    background: #f1f1f1;
+    color: #434343;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .gallery a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .gallery img {
     width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.1);
+  }
+  
+  @import url('https://fonts.googleapis.com/css?family=Poppinus:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-one {
+    margin: 10px;
+}
+.container {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20 auto;
+    padding: 0 10px;
+    color:#ffffff
+}
+.contact-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5%;
-}
-.logo {
-    columns: var(--color-white);
-    font-size: 30px;
-}
-
-.logo span{
-    color: var(--color-primary);
-}
-
-.nav ul{
-    list-style-type: none;
-    display: flex;
-}
-
-.nav ul li{
-    padding: 10px 30px;
-    position: relative;
-}
-
-.nav ul li a{
-    color: var(--color-white);
-    text-decoration: none;
-    font-weight: bold;
-
-    transform: all 0.3s;
-   }
-
-   .nav ul li a:hover{
-    color: var(--color-primary);
-   }
-
-   .dropdown__menu{
-    display: none;
-   }
-
-   .nav ul li:hover .dropdown__menu{
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: var(--color-black);
-   }
-
-   .dropdown__menu ul {
-    display: block;
-    margin: 10px;
-   }
-
-   .dropdown__menu ul li{
-    width: 150px;
-    padding: 5px;
-   }
-
-   .container{
-    width: 100%;
-    min-height: 100vh;
-    background-image: linear-gradient(rgba(9,0,77,0.65),rgba(9,0,77,0.65)), url(/static/img/bg1.jpg);
-    background-size: cover;
-    background-position: center;
-    padding: 10px 8px;
-}
-.content{
-    margin-top: 14%;
-    color: #fff;
-    max-width: 620px;
-}
-
-.container h1{
-    font-size: 70px;
-    font-weight: 600;
-    line height: 85px;
-    margin-bottom: 25px;
-}
-
-*** Testimonial ***/
-.testimonial-carousel .owl-item .testimonial-item {
-    box-shadow: 0 0 45px rgb(0, 0, 0);
-    border: 1px solid transparent;
-    transform: scale(.85);
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-item.center .testimonial-item {
-    box-shadow: none;
-    border-color: var(--color-primary);
-    transform: scale(1);
-}
-
-.testimonial-carousel .owl-item .testimonial-item img {
-    width: 50px;
-    height: 50px;
-}
-
-.testimonial-carousel .owl-nav {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next {
-    margin: 0 12px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    border-radius: 45px;
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-nav .owl-prev:hover,
-.testimonial-carousel .owl-nav .owl-next:hover {
     color: #ffffff;
-    background: var(--color-primary);
 }
 
-/*** Footer ***/
-.footer .btn.btn-social {
-    margin-right: 5px;
-    width: 40px;
-    height: 40px;
+.contact-info span {
+    margin-right: 20px;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.social-icons{
     display: flex;
+    justify-content:center;
+  }
+  .social-icons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: #53e2d6;
+    margin: 5px;
+    border-radius: 50%;
+  }
+  .social-icons a i {
+    font-size: 1em;
+    color: black;
+    opacity: o.9;
+  }
+
+  .social-icons a:hover{
+    background-color:#110101;
+    transition: 0.5s;
+  }
+
+  .social-icons a:hover i {
+    color: white;
+    transition: 0.5s;
+  }
+
+.email:before,
+.phone:before {
+content: '\f0e0'; /* Font Awesome icon for envelope */
+font-family: FontAwesome;
+margin-right: 5px;
+}
+
+.phone:before {
+content: '\f095'; /* Font Awesome icon for phone */
+}
+
+body 
+{
+    min-height: 100vh;
+    background: rgb(0, 0, 0);
+}
+.logo img {
+    height: 80px; /* Adjust the height as needed */
+    margin: 20px;
+  
+  }
+header
+{
+    position: absolute;
+    width: 100%;
+    min-height: 30px;
+    background: rgb(0, 0, 0);
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    color: var(--color-black);
-    border: 1px solid rgba(256, 256, 256, .1);
-    border-radius: 40px;
-    transition: .3s;
 }
 
-.footer .btn.btn-social:hover {
-    color: var(--color-primary);
-}
-
-.footer .btn.btn-link {
-    display: block;
-    margin-bottom: 10px;
-    padding: 0;
-    text-align: left;
-    color: var(--color-white);
-    font-weight: normal;
-    transition: .3s;
-}
-
-.footer .btn.btn-link::before {
+header ul
+{
     position: relative;
-    content: "\f105";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 10px;
+    color: rgb(0, 0, 0);
+}
+header ul li 
+{
+    position: relative;
+    list-style: none;
+    float: left;
+    color: #53e2d6;
 }
 
-.footer .btn.btn-link:hover {
+header ul li a 
+{
+    color: rgb(255, 255, 255);
+    font: size 1.1em;
+    padding: 20px 25px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+header ul li a:hover
+{
+    background: #53e2d6;
+}
+
+
+
+header ul li ul  {
+    color: rgb(0, 0, 0);
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+header ul li:hover ul
+{
+    display: block;
+}
+
+header ul li ul li 
+{
+    position: relative;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* making it responsive */
+@media (max-width: 900px)
+{
+    header 
+    {
+        padding: 10px 20px;
+    }
+    header nav
+    {
+        position: absolute;
+        width: 100%;
+        top: 125px;
+        left: 0;
+        background: rgb(162, 161, 160);
+        display: none;
+    }
+
+    header.active nav 
+    {
+        display: initial;
+
+    }
+    header nav ul li
+    {
+        width: 100%;
+        
+
+    }
+    header nav ul li ul 
+    {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+    header nav ul li:hover ul li
+    {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .menuToggle 
+    {
+        position: relative;
+        width: 40px;
+        height: 50px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menuToggle::before
+    {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: rgb(0, 0, 0);
+        transform: translateY(-12px);
+        box-shadow: 0 12px white;
+    }
+    .menuToggle::after
+    {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: white;
+        transform: translateY(-12px);
+    }
+    header.active .menuToggle::before
+    {
+        transform: rotate(45deg);
+        box-shadow: 0 0 white;
+
+    }
+    header.active .menuToggle::after
+    {
+        transform: rotate(312deg);
+    }
+   
+}
+.map{
+    display: block;
+    margin-left: 0%;
+}
+.map iframe{
+    position: sticky;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    height: 400px;
+    width: 1500px;
+ }
+
+
+footer {
+    background-color: #000000;
+  }
+
+.footercontainer{
+    width: 100%;
+    padding: 70px 30px 20px;
+
+  }
+
+  .footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-content h3 {
+    color: #f5f5f5;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    color: #f9f9f9;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+  .socialIcons{
+    display: flex;
+    justify-content:center;
+  }
+  .socialIcons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: #53e2d6;
+    margin: 10px;
+    border-radius: 50%;
+  }
+  .socialIcons a i {
+    font-size: 2em;
+    color: black;
+    opacity: o.9;
+  }
+
+  .socialIcons a:hover{
+    background-color:#110101;
+    transition: 0.5s;
+  }
+
+  .socialIcons a:hover i {
+    color: white;
+    transition: 0.5s;
+  }
+
+  .footernav{
+    margin: 50px 0;;
+  }
+
+  .footernav ul{ 
+    justify-content: center;
+    display: flex;
+  }
+
+  .footernav ul li a{
+    color: #53e2d6;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+  }
+
+  .footernav ul li a:hover{
+    opacity: 2;
+    color: #fff;
+  }
+
+  .footerBottom{
+    background-color: #080808;
+    padding:20px ;
+    text-align: center;
+  }
+
+  
+
+  .footerBottom p{
+    color: white;
+  }
+
+  .designer{
+    opacity: 0.7;
+    text-transform:capitalize;
     letter-spacing: 1px;
-    box-shadow: none;
-}
+    font-weight: 400;
+    margin:0px 5px;
+  }
+  @media(max-width: 700px){
+    .footernav ul {
+      flex-direction: column;
+    }
+  }
+  .footernav ul li{
+    width:100%; 
+    text-align: center;
+    margin: 10px;
+  }
 
-.footer .copyright {
-    padding: 25px 0;
-    font-size: 14px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
-}
+/* Add the following CSS to remove dots from unordered lists in the footer */
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-.footer .copyright a {
-    color: var(--color-white);
-}
-
-.footer .footer-menu a {
-    margin-right: 15px;
-    padding-right: 15px;
-    border-right: 1px solid rgba(255, 255, 255, .1);
-}
-
-.footer .footer-menu a:last-child {
-    margin-right: 0;
-    padding-right: 0;
-    border-right: none;
-}
+  footer ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
